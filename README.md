@@ -9,8 +9,9 @@
 
 ## sound
 - oscillators, phasors and noise
-- scopes
+- scopes (tabwrite + array)
 - line
+- filters (hip~, lpf~, bp~, vcf~, bob~)
 
 ## sonifcation
 - arduino
