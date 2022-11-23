@@ -1,0 +1,28 @@
+#N canvas 1434 162 527 700 10;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array \$0-scope 100 float 5 black black;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 130 300 graph;
+#X obj 320 150 metro 100;
+#X obj 320 120 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
+#X obj 130 220 inlet~;
+#X obj 130 280 tabwrite~ \$0-scope;
+#X obj 320 60 loadbang;
+#X msg 320 90 1;
+#X obj 130 450 hsl 194 20 44 4400 0 0 empty empty empty -2 -8 0 10
+#444444 #ffffff #ff0080 0 1;
+#X msg 130 490 resize \$1;
+#X obj 130 530 s \$0-scope;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X coords 0 -1 1 1 212 206 1 124 271;
