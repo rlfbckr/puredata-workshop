@@ -1,4 +1,4 @@
-#N canvas 0 0 1695 877 10;
+#N canvas 33 16 1696 853 10;
 #X obj 770 180 bng 19 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 770 50 tgl 33 0 empty empty empty 17 7 0 10 #00ff40 #ff0080
@@ -28,13 +28,13 @@
 #X obj 910 340 ctlin 23;
 #X obj 1060 80 / 127;
 #X obj 1060 105 * 10000;
-#X obj 100 70 osc~ 440;
-#X obj 100 350 dac~;
-#X obj 100 310 *~ 0.5;
-#X floatatom 140 290 4 0 1 0 - - -, f 4;
-#X floatatom 100 40 5 0 0 0 - - -, f 5;
-#X obj 240 360 tabwrite~ display;
-#X obj 240 280 tgl 33 0 empty empty empty 17 7 0 10 #00ff40 #ff0080
+#X obj 20 60 osc~ 440;
+#X obj 100 440 dac~;
+#X obj 100 400 *~ 0.5;
+#X floatatom 140 380 4 0 1 0 - - -, f 4;
+#X floatatom 20 30 5 0 0 0 - - -, f 5;
+#X obj 230 430 tabwrite~ display;
+#X obj 230 350 tgl 33 0 empty empty empty 17 7 0 10 #00ff40 #ff0080
 #000000 0 1;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array display 500 float 1 black black;
@@ -116,39 +116,73 @@
 0.0196961 0.0189648 0.0181191 0.0171628 0.0161007 0.014938 0.0136808
 ;
 #X coords 0 1 499 -1 610 170 1;
-#X restore 100 400 graph;
-#X obj 100 250 +~, f 17;
-#X floatatom 220 40 5 0 0 0 - - -, f 5;
-#X obj 290 30 noise~;
-#X floatatom 160 40 5 0 0 0 - - -, f 5;
-#X obj 160 70 * -1;
-#X obj 390 60 click~;
-#X obj 390 30 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 390 120 lop~ 100;
-#X obj 650 300 line;
-#X floatatom 650 330 5 0 0 0 - - -, f 5;
-#X obj 650 270 pack i i;
-#X obj 240 320 metro 100;
-#X obj 280 120 *~ 0.2;
-#X floatatom 310 70 5 0 0 0 - - -, f 5;
-#X obj 280 150 bp~ 100 0.5;
-#X floatatom 340 90 5 0 0 0 - - -, f 5;
-#X obj 390 90 *~ 50;
-#X obj 100 130 *~, f 13;
-#X obj 220 70 phasor~ 100;
-#X obj 220 100 *~ 0.8, f 5;
-#X obj 100 100 *~ 0.1;
-#X obj 530 200 osc~ 440;
-#X floatatom 530 150 5 0 0 0 - - -, f 5;
-#X obj 590 60 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 590 170 pack i i;
-#X obj 530 270 *~;
-#X obj 590 200 line~;
-#X msg 640 130 0 20;
-#X msg 590 130 0.8 1;
-#X obj 640 100 delay 20;
+#X restore 100 470 graph;
+#X obj 100 340 +~, f 17;
+#X floatatom 140 30 5 0 0 0 - - -, f 5;
+#X obj 210 20 noise~;
+#X floatatom 80 30 5 0 0 0 - - -, f 5;
+#X obj 80 60 * -1;
+#X obj 360 270 click~;
+#X obj 360 240 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 360 330 lop~ 100;
+#X obj 640 370 line;
+#X floatatom 640 400 5 0 0 0 - - -, f 5;
+#X obj 640 340 pack i i;
+#X obj 230 390 metro 100;
+#X obj 120 210 *~ 0.2;
+#X floatatom 150 160 5 0 0 0 - - -, f 5;
+#X obj 120 240 bp~ 100 0.5;
+#X floatatom 180 180 5 0 0 0 - - -, f 5;
+#X obj 360 300 *~ 50;
+#X obj 20 150 *~, f 13;
+#X obj 140 60 phasor~ 100;
+#X obj 140 90 *~ 0.8, f 5;
+#X obj 20 90 *~ 0.1;
+#X obj 520 310 osc~ 440;
+#X floatatom 520 260 5 0 0 0 - - -, f 5;
+#X obj 600 100 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 590 280 pack i i;
+#X obj 520 360 *~;
+#X obj 590 310 line~;
+#X msg 640 240 0 20;
+#X msg 590 240 0.8 1;
+#X obj 640 210 delay 20;
+#X obj 360 40 metro 200;
+#X obj 360 10 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 360 70 counter 8;
+#X obj 530 200 * 100;
+#X obj 530 225 + 200;
+#X obj 360 100 route 0 1 2 3 4 5 6 7, f 33;
+#X obj 360 125 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 390 130 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 440 150 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 500 150 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 450 260 click~;
+#X obj 450 320 lop~ 1000;
+#X obj 450 290 *~ 200;
+#X obj 1017 284 OSCroute /mouse;
+#X obj 1017 309 unpack 0 0;
+#X floatatom 1020 350 5 0 0 0 - - -, f 5;
+#X obj 1018 256 dumpOSC 12000;
+#X floatatom 1070 360 5 0 0 0 - - -, f 5;
+#X obj 940 480 osc~ 440;
+#X floatatom 940 450 5 0 0 0 - - -, f 5;
+#X floatatom 1060 450 5 0 0 0 - - -, f 5;
+#X obj 1040 630 *~ 0.2;
+#X floatatom 1070 580 5 0 0 0 - - -, f 5;
+#X obj 1040 660 bp~ 100 0.5;
+#X floatatom 1100 600 5 0 0 0 - - -, f 5;
+#X obj 940 570 *~, f 13;
+#X obj 1060 480 phasor~ 100;
+#X obj 1060 510 *~ 0.8, f 5;
+#X obj 940 510 *~ 0.1;
 #X connect 0 0 10 0;
 #X connect 1 0 3 0;
 #X connect 2 0 3 1;
@@ -181,6 +215,7 @@
 #X connect 37 0 38 0;
 #X connect 39 0 50 0;
 #X connect 40 0 39 0;
+#X connect 41 0 34 1;
 #X connect 42 0 43 0;
 #X connect 44 0 42 0;
 #X connect 45 0 31 0;
@@ -202,3 +237,35 @@
 #X connect 61 0 58 0;
 #X connect 62 0 58 0;
 #X connect 63 0 61 0;
+#X connect 64 0 66 0;
+#X connect 65 0 64 0;
+#X connect 66 0 69 0;
+#X connect 67 0 68 0;
+#X connect 68 0 56 0;
+#X connect 69 0 70 0;
+#X connect 69 1 71 0;
+#X connect 69 2 72 0;
+#X connect 69 3 73 0;
+#X connect 70 0 40 0;
+#X connect 72 0 74 0;
+#X connect 73 0 57 0;
+#X connect 74 0 76 0;
+#X connect 75 0 34 1;
+#X connect 76 0 75 0;
+#X connect 77 0 78 0;
+#X connect 78 0 79 0;
+#X connect 78 1 81 0;
+#X connect 79 0 83 0;
+#X connect 80 0 77 0;
+#X connect 81 0 84 0;
+#X connect 82 0 92 0;
+#X connect 83 0 82 0;
+#X connect 84 0 90 0;
+#X connect 85 0 87 0;
+#X connect 86 0 87 1;
+#X connect 87 0 34 0;
+#X connect 88 0 87 2;
+#X connect 89 0 85 0;
+#X connect 90 0 91 0;
+#X connect 91 0 89 1;
+#X connect 92 0 89 0;
