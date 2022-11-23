@@ -1,0 +1,39 @@
+#N canvas 200 79 1388 695 10;
+#X obj 50 90 + 100;
+#X floatatom 50 10 9 0 0 0 - - -, f 9;
+#X floatatom 80 60 9 0 0 0 - - -, f 9;
+#X obj 20 10 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X floatatom 50 120 5 0 0 0 - - -, f 5;
+#X obj 200 170 bng 19 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 200 30 tgl 33 0 empty empty empty 17 7 0 10 #00ff40 #ff0080
+#000000 1 1;
+#X floatatom 260 90 10 0 0 0 - - -, f 10;
+#X obj 200 130 metro;
+#X obj 260 30 loadbang;
+#X msg 260 60 1000;
+#X floatatom 200 350 11 0 0 0 - - -, f 11;
+#X obj 350 30 hsl 277 38 0 10000 0 0 empty empty empty -2 -8 0 10 #ff80ff
+#250dff #000000 550 1;
+#X text 350 10 change metro inteval;
+#X text 200 10 start metro;
+#X obj 210 260 random_range;
+#X floatatom 260 190 5 0 0 0 - - -, f 5;
+#X floatatom 310 190 5 0 0 0 - - -, f 5;
+#X text 260 170 min;
+#X text 310 170 max;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 0;
+#X connect 5 0 15 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 1;
+#X connect 8 0 5 0;
+#X connect 9 0 10 0;
+#X connect 10 0 7 0;
+#X connect 12 0 7 0;
+#X connect 15 0 11 0;
+#X connect 16 0 15 1;
+#X connect 17 0 15 2;

@@ -1,0 +1,18 @@
+#N canvas 664 81 691 595 10;
+#X obj 177 127 - 0;
+#X obj 117 157 random;
+#X obj 117 187 +, f 15;
+#X obj 177 87 t b a;
+#X obj 140 20 inlet;
+#X obj 240 20 inlet;
+#X obj 120 220 outlet;
+#X obj 60 20 inlet;
+#X connect 0 0 1 1;
+#X connect 1 0 2 0;
+#X connect 2 0 6 0;
+#X connect 3 0 0 0;
+#X connect 3 1 0 1;
+#X connect 3 1 2 1;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 7 0 1 0;
